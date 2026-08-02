@@ -5,3 +5,6 @@ Base is an OP Stack L2 secured by Ethereum. This update documents the chain ID (
 feat: add SimpleStorage contract for Base
 
 Created a basic SimpleStorage.sol contract with set and get functions. First smart contract ready to deploy on Base Sepolia.
+feat: add owner-only modifier to SimpleStorage
+
+Introduced an onlyOwner modifier and restricted the set function. Improves security for contracts deployed on Base.
