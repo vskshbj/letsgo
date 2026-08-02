@@ -8,3 +8,6 @@ Created a basic SimpleStorage.sol contract with set and get functions. First sma
 feat: add owner-only modifier to SimpleStorage
 
 Introduced an onlyOwner modifier and restricted the set function. Improves security for contracts deployed on Base.
+feat: add getOwner function to SimpleStorage
+
+Exposed a public getOwner view function. Makes it easier to verify ownership after deploying on Base.
