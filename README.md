@@ -1,1 +1,4 @@
 Base is an optimistic rollup built on the OP Stack that aims to make onchain apps more accessible, cheaper and developer-friendly. This repo kicks off my journey contributing to the Base ecosystem.
+docs: add project overview and Base network details
+
+Base is an OP Stack L2 secured by Ethereum. This update documents the chain ID (8453), RPC endpoints and the main goals of this repository: learning and shipping onchain apps.
