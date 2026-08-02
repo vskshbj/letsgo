@@ -11,3 +11,6 @@ Introduced an onlyOwner modifier and restricted the set function. Improves secur
 feat: add getOwner function to SimpleStorage
 
 Exposed a public getOwner view function. Makes it easier to verify ownership after deploying on Base.
+feat: add pause functionality to SimpleStorage
+
+Implemented a pause mechanism so the owner can temporarily disable the set function. Useful safety feature for contracts on Base.
