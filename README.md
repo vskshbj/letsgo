@@ -2,3 +2,6 @@ Base is an optimistic rollup built on the OP Stack that aims to make onchain app
 docs: add project overview and Base network details
 
 Base is an OP Stack L2 secured by Ethereum. This update documents the chain ID (8453), RPC endpoints and the main goals of this repository: learning and shipping onchain apps.
+feat: add SimpleStorage contract for Base
+
+Created a basic SimpleStorage.sol contract with set and get functions. First smart contract ready to deploy on Base Sepolia.
