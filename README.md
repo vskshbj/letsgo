@@ -112,3 +112,15 @@ contract NameRegistry {
         names[msg.sender] = _name;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract MessageBoard {
+    string public lastMessage;
+    address public lastSender;
+
+    function post(string calldata _message) external {
+        lastMessage = _message;
+        lastSender = msg.sender;
+    }
+}
