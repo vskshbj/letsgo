@@ -23,3 +23,6 @@ Implemented a function that allows setting multiple values in a single transacti
 feat: add data validation to SimpleStorage
 
 Added checks to prevent storing empty or invalid values. Makes the contract more reliable when used on Base.
+feat: add timestamp tracking to SimpleStorage
+
+Every time a value is stored, the contract now also records the block timestamp. Useful for time-based logic on Base.
