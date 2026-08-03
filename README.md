@@ -29,3 +29,57 @@ Every time a value is stored, the contract now also records the block timestamp.
 feat: add retrieve all data function to SimpleStorage
 
 Created a view function that returns both the stored value and its timestamp in one call. Cleaner interaction on Base.
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract SimpleStorage {
+    address public owner;
+    uint256 private storedValue;
+    uint256 public lastUpdated;
+    bool public paused;
+
+    event ValueStored(address indexed user, uint256 value, uint256 timestamp);
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+    event Paused(address account);
+    event Unpaused(address account);
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Not owner");
+        _;
+    }
+
+    modifier whenNotPaused() {
+        require(!paused, "Paused");
+        _;
+    }
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    function set(uint256 value) external onlyOwner whenNotPaused {
+        storedValue = value;
+        lastUpdated = block.timestamp;
+        emit ValueStored(msg.sender, value, block.timestamp);
+    }
+
+    function get() external view returns (uint256, uint256) {
+        return (storedValue, lastUpdated);
+    }
+
+    function pause() external onlyOwner {
+        paused = true;
+        emit Paused(msg.sender);
+    }
+
+    function unpause() external onlyOwner {
+        paused = false;
+        emit Unpaused(msg.sender);
+    }
+
+    function transferOwnership(address newOwner) external onlyOwner {
+        require(newOwner != address(0), "Zero address");
+        emit OwnershipTransferred(owner, newOwner);
+        owner = newOwner;
+    }
+}
