@@ -83,3 +83,22 @@ contract SimpleStorage {
         owner = newOwner;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract OwnableStorage {
+    address public owner;
+    uint256 public value;
+
+    event ValueChanged(uint256 newValue);
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    function setValue(uint256 _value) external {
+        require(msg.sender == owner, "Not owner");
+        value = _value;
+        emit ValueChanged(_value);
+    }
+}
