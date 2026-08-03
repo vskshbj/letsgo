@@ -17,3 +17,6 @@ Implemented a pause mechanism so the owner can temporarily disable the set funct
 feat: add version tracking to SimpleStorage
 
 Introduced a version variable that increments on important changes. Helps track contract upgrades and history on Base.
+feat: add batch set function to SimpleStorage
+
+Implemented a function that allows setting multiple values in a single transaction. Reduces gas costs when interacting on Base.
