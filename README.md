@@ -26,3 +26,6 @@ Added checks to prevent storing empty or invalid values. Makes the contract more
 feat: add timestamp tracking to SimpleStorage
 
 Every time a value is stored, the contract now also records the block timestamp. Useful for time-based logic on Base.
+feat: add retrieve all data function to SimpleStorage
+
+Created a view function that returns both the stored value and its timestamp in one call. Cleaner interaction on Base.
