@@ -14,3 +14,6 @@ Exposed a public getOwner view function. Makes it easier to verify ownership aft
 feat: add pause functionality to SimpleStorage
 
 Implemented a pause mechanism so the owner can temporarily disable the set function. Useful safety feature for contracts on Base.
+feat: add version tracking to SimpleStorage
+
+Introduced a version variable that increments on important changes. Helps track contract upgrades and history on Base.
