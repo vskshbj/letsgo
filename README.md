@@ -20,3 +20,6 @@ Introduced a version variable that increments on important changes. Helps track 
 feat: add batch set function to SimpleStorage
 
 Implemented a function that allows setting multiple values in a single transaction. Reduces gas costs when interacting on Base.
+feat: add data validation to SimpleStorage
+
+Added checks to prevent storing empty or invalid values. Makes the contract more reliable when used on Base.
