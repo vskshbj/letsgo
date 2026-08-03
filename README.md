@@ -102,3 +102,13 @@ contract OwnableStorage {
         emit ValueChanged(_value);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract NameRegistry {
+    mapping(address => string) public names;
+
+    function setName(string calldata _name) external {
+        names[msg.sender] = _name;
+    }
+}
