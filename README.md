@@ -134,3 +134,14 @@ contract BalanceTracker {
         lastAmount = msg.value;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Scoreboard {
+    uint256 public highScore;
+
+    function submitScore(uint256 score) external {
+        require(score > highScore, "Not high enough");
+        highScore = score;
+    }
+}
