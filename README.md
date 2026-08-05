@@ -174,3 +174,14 @@ contract Temperature {
         celsius = _celsius;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Rating {
+    uint8 public rating;
+
+    function setRating(uint8 _rating) external {
+        require(_rating >= 1 && _rating <= 5, "Invalid rating");
+        rating = _rating;
+    }
+}
