@@ -185,3 +185,13 @@ contract Rating {
         rating = _rating;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract PasswordChecker {
+    string private password = "base";
+
+    function check(string calldata attempt) external view returns (bool) {
+        return keccak256(abi.encodePacked(attempt)) == keccak256(abi.encodePacked(password));
+    }
+}
