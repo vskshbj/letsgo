@@ -145,3 +145,12 @@ contract Scoreboard {
         highScore = score;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract FavoriteNumber {
+    mapping(address => uint256) public favorites;
+
+    function setFavorite(uint256 number) external {
+        favorites[msg.sender] = number;
+    }
