@@ -164,3 +164,13 @@ contract ColorPicker {
         favoriteColor = color;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Temperature {
+    int256 public celsius;
+
+    function setTemperature(int256 _celsius) external {
+        celsius = _celsius;
+    }
+}
