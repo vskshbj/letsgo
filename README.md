@@ -209,3 +209,13 @@ contract MathHelper {
         value -= amount;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract DayCounter {
+    uint256 public calls;
+
+    function hit() external {
+        calls++;
+    }
+}
