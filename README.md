@@ -154,3 +154,13 @@ contract FavoriteNumber {
     function setFavorite(uint256 number) external {
         favorites[msg.sender] = number;
     }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ColorPicker {
+    string public favoriteColor = "blue";
+
+    function setColor(string calldata color) external {
+        favoriteColor = color;
+    }
+}
