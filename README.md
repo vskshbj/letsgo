@@ -219,3 +219,11 @@ contract DayCounter {
         calls++;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Percentage {
+    function calc(uint256 amount, uint256 percent) external pure returns (uint256) {
+        return (amount * percent) / 100;
+    }
+}
