@@ -195,3 +195,17 @@ contract PasswordChecker {
         return keccak256(abi.encodePacked(attempt)) == keccak256(abi.encodePacked(password));
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract MathHelper {
+    uint256 public value;
+
+    function add(uint256 amount) external {
+        value += amount;
+    }
+
+    function subtract(uint256 amount) external {
+        value -= amount;
+    }
+}
