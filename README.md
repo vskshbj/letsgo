@@ -235,3 +235,11 @@ contract Doubler {
         return number * 2;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Square {
+    function calc(uint256 number) external pure returns (uint256) {
+        return number * number;
+    }
+}
