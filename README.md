@@ -227,3 +227,11 @@ contract Percentage {
         return (amount * percent) / 100;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Doubler {
+    function double(uint256 number) external pure returns (uint256) {
+        return number * 2;
+    }
+}
