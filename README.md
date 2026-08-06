@@ -284,3 +284,11 @@ contract Absolute {
         return number >= 0 ? uint256(number) : uint256(-number);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract EqualChecker {
+    function isEqual(uint256 a, uint256 b) external pure returns (bool) {
+        return a == b;
+    }
+}
