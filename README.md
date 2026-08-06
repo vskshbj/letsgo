@@ -259,3 +259,12 @@ contract PowerOfTwo {
         return 2 ** exp;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Remainder {
+    function calc(uint256 a, uint256 b) external pure returns (uint256) {
+        require(b > 0, "Division by zero");
+        return a % b;
+    }
+}
