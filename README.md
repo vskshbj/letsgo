@@ -341,3 +341,11 @@ contract IsEven {
         return number % 2 == 0;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract IsOdd {
+    function check(uint256 number) external pure returns (bool) {
+        return number % 2 != 0;
+    }
+}
