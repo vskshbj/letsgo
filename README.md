@@ -276,3 +276,11 @@ contract MaxOfTwo {
         return a > b ? a : b;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Absolute {
+    function abs(int256 number) external pure returns (uint256) {
+        return number >= 0 ? uint256(number) : uint256(-number);
+    }
+}
