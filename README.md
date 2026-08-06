@@ -324,3 +324,12 @@ contract Product {
         return a * b;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Division {
+    function divide(uint256 a, uint256 b) external pure returns (uint256) {
+        require(b > 0, "Cannot divide by zero");
+        return a / b;
+    }
+}
