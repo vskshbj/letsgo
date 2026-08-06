@@ -357,3 +357,11 @@ contract PercentOf100 {
         return (value * 100) / 100; // simplified example
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ModuloTen {
+    function calc(uint256 number) external pure returns (uint256) {
+        return number % 10;
+    }
+}
