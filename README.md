@@ -243,3 +243,11 @@ contract Square {
         return number * number;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Triple {
+    function calc(uint256 number) external pure returns (uint256) {
+        return number * 3;
+    }
+}
