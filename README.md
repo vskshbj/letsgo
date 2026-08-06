@@ -316,3 +316,11 @@ contract SumThree {
         return a + b + c;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Product {
+    function multiply(uint256 a, uint256 b) external pure returns (uint256) {
+        return a * b;
+    }
+}
