@@ -333,3 +333,11 @@ contract Division {
         return a / b;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract IsEven {
+    function check(uint256 number) external pure returns (bool) {
+        return number % 2 == 0;
+    }
+}
