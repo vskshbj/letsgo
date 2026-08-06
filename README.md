@@ -349,3 +349,11 @@ contract IsOdd {
         return number % 2 != 0;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract PercentOf100 {
+    function calc(uint256 value) external pure returns (uint256) {
+        return (value * 100) / 100; // simplified example
+    }
+}
