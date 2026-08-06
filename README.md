@@ -365,3 +365,11 @@ contract ModuloTen {
         return number % 10;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract IsPositive {
+    function check(uint256 number) external pure returns (bool) {
+        return number > 0;
+    }
+}
