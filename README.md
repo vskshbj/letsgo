@@ -300,3 +300,11 @@ contract NotEqual {
         return a != b;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract GreaterOrEqual {
+    function check(uint256 a, uint256 b) external pure returns (bool) {
+        return a >= b;
+    }
+}
