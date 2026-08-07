@@ -373,3 +373,13 @@ contract IsPositive {
         return number > 0;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Clamp {
+    function clamp(uint256 value, uint256 min, uint256 max) external pure returns (uint256) {
+        if (value < min) return min;
+        if (value > max) return max;
+        return value;
+    }
+}
