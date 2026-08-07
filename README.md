@@ -446,3 +446,11 @@ contract RightShift {
         return value >> positions;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract AddressToUint {
+    function convert(address addr) external pure returns (uint256) {
+        return uint256(uint160(addr));
+    }
+}
