@@ -470,3 +470,16 @@ contract RequireExample {
         require(value > 0, "Value must be positive");
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ModifierExample {
+    address public owner = msg.sender;
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Not owner");
+        _;
+    }
+
+    function restricted() external onlyOwner {}
+}
