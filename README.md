@@ -407,3 +407,11 @@ contract RangeChecker {
         return value >= min && value <= max;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Power {
+    function calc(uint256 base, uint256 exp) external pure returns (uint256) {
+        return base ** exp;
+    }
+}
