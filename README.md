@@ -462,3 +462,11 @@ contract EncodePacked {
         return abi.encodePacked(a, b);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract RequireExample {
+    function check(uint256 value) external pure {
+        require(value > 0, "Value must be positive");
+    }
+}
