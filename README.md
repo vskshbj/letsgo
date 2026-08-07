@@ -454,3 +454,11 @@ contract AddressToUint {
         return uint256(uint160(addr));
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract EncodePacked {
+    function encode(uint256 a, address b) external pure returns (bytes memory) {
+        return abi.encodePacked(a, b);
+    }
+}
