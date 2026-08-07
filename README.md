@@ -438,3 +438,11 @@ contract BitwiseAnd {
         return a & b;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract RightShift {
+    function shift(uint256 value, uint256 positions) external pure returns (uint256) {
+        return value >> positions;
+    }
+}
