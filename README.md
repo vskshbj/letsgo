@@ -534,3 +534,13 @@ contract TryCatchExample {
 
     function externalFunction() external pure {}
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ImmutableOwner {
+    address public immutable owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
+}
