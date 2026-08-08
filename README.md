@@ -580,3 +580,11 @@ contract MsgDataLength {
         return msg.data.length;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Create2Helper {
+    function computeAddress(bytes32 salt, bytes32 bytecodeHash) external view returns (address) {
+        return address(uint160(uint256(keccak256(abi.encodePacked(bytes1(0xff), address(this), salt, bytecodeHash)))));
+    }
+}
