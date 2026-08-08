@@ -554,3 +554,13 @@ contract UncheckedExample {
         }
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+contract TransientDemo {
+    function setTransient(uint256 value) external {
+        assembly {
+            tstore(0, value)
+        }
+    }
+}
