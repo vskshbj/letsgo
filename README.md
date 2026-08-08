@@ -596,4 +596,11 @@ contract StaticcallExample {
         (bool success, ) = target.staticcall("");
         return success;
     }
+}// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract BytesSlice {
+    function slice(bytes calldata data, uint256 start, uint256 end) external pure returns (bytes memory) {
+        return data[start:end];
+    }
 }
