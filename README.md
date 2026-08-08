@@ -604,3 +604,15 @@ contract BytesSlice {
         return data[start:end];
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract MappingCounter {
+    mapping(address => uint256) public values;
+    uint256 public count;
+
+    function set(uint256 value) external {
+        if (values[msg.sender] == 0 && value > 0) count++;
+        values[msg.sender] = value;
+    }
+}
