@@ -498,3 +498,13 @@ contract StructExample {
         person = Person(_name, _age);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract NestedMapping {
+    mapping(address => mapping(address => uint256)) public allowances;
+
+    function set(address spender, uint256 amount) external {
+        allowances[msg.sender][spender] = amount;
+    }
+}
