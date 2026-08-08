@@ -483,3 +483,18 @@ contract ModifierExample {
 
     function restricted() external onlyOwner {}
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract StructExample {
+    struct Person {
+        string name;
+        uint256 age;
+    }
+
+    Person public person;
+
+    function set(string calldata _name, uint256 _age) external {
+        person = Person(_name, _age);
+    }
+}
