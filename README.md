@@ -508,3 +508,15 @@ contract NestedMapping {
         allowances[msg.sender][spender] = amount;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Parent {
+    uint256 public value;
+}
+
+contract Child is Parent {
+    function setValue(uint256 _value) external {
+        value = _value;
+    }
+}
