@@ -572,3 +572,11 @@ contract BaseFee {
         return block.basefee;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract MsgDataLength {
+    function getLength() external pure returns (uint256) {
+        return msg.data.length;
+    }
+}
