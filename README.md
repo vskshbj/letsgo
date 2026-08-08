@@ -588,3 +588,12 @@ contract Create2Helper {
         return address(uint160(uint256(keccak256(abi.encodePacked(bytes1(0xff), address(this), salt, bytecodeHash)))));
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract StaticcallExample {
+    function staticCall(address target) external view returns (bool) {
+        (bool success, ) = target.staticcall("");
+        return success;
+    }
+}
