@@ -520,3 +520,17 @@ contract Child is Parent {
         value = _value;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract TryCatchExample {
+    function tryCall(address target) external returns (bool success) {
+        try this.externalFunction() {
+            success = true;
+        } catch {
+            success = false;
+        }
+    }
+
+    function externalFunction() external pure {}
+}
