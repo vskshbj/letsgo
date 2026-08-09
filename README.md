@@ -690,3 +690,17 @@ contract ModifierArg {
 
     function set(uint256 value) external greaterThan(value, 10) {}
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ParentOverride {
+    function getValue() public pure virtual returns (uint256) {
+        return 1;
+    }
+}
+
+contract ChildOverride is ParentOverride {
+    function getValue() public pure override returns (uint256) {
+        return 2;
+    }
+}
