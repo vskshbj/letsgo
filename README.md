@@ -679,3 +679,14 @@ contract Overloading {
         return a + b + c;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ModifierArg {
+    modifier greaterThan(uint256 value, uint256 min) {
+        require(value > min, "Too small");
+        _;
+    }
+
+    function set(uint256 value) external greaterThan(value, 10) {}
+}
