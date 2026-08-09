@@ -646,3 +646,24 @@ contract DoWhile {
         return i;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract SwitchLike {
+    function getDay(uint256 day) external pure returns (string memory) {
+        if (day == 1) return "Monday";
+        if (day == 2) return "Tuesday";
+        if (day == 3) return "Wednesday";
+        return "Other";
+    }
+}// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract SwitchLike {
+    function getDay(uint256 day) external pure returns (string memory) {
+        if (day == 1) return "Monday";
+        if (day == 2) return "Tuesday";
+        if (day == 3) return "Wednesday";
+        return "Other";
+    }
+}
