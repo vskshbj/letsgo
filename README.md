@@ -756,3 +756,14 @@ contract SstoreExample {
         }
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract KeccakAssembly {
+    function hash(uint256 value) external pure returns (bytes32 result) {
+        assembly {
+            mstore(0x00, value)
+            result := keccak256(0x00, 0x20)
+        }
+    }
+}
