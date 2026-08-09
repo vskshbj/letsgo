@@ -729,3 +729,13 @@ contract AnonymousEvent {
         emit Log(value);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ErrorSelector {
+    error MyError();
+
+    function getSelector() external pure returns (bytes4) {
+        return MyError.selector;
+    }
+}
