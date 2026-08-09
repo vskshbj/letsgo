@@ -634,3 +634,15 @@ contract IfElse {
         }
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract DoWhile {
+    function run(uint256 n) external pure returns (uint256) {
+        uint256 i = 0;
+        do {
+            i++;
+        } while (i < n);
+        return i;
+    }
+}
