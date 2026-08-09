@@ -746,3 +746,13 @@ contract StoragePacking {
     uint128 public a;
     uint128 public b; // packed in same slot
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract SstoreExample {
+    function write(uint256 value) external {
+        assembly {
+            sstore(0, value)
+        }
+    }
+}
