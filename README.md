@@ -719,3 +719,13 @@ contract Implementation is IExtended {
     function base() external pure returns (uint256) { return 1; }
     function extended() external pure returns (uint256) { return 2; }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract AnonymousEvent {
+    event Log(uint256 value) anonymous;
+
+    function emitLog(uint256 value) external {
+        emit Log(value);
+    }
+}
