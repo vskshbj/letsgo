@@ -704,3 +704,18 @@ contract ChildOverride is ParentOverride {
         return 2;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+interface IBase {
+    function base() external pure returns (uint256);
+}
+
+interface IExtended is IBase {
+    function extended() external pure returns (uint256);
+}
+
+contract Implementation is IExtended {
+    function base() external pure returns (uint256) { return 1; }
+    function extended() external pure returns (uint256) { return 2; }
+}
