@@ -739,3 +739,10 @@ contract ErrorSelector {
         return MyError.selector;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract StoragePacking {
+    uint128 public a;
+    uint128 public b; // packed in same slot
+}
