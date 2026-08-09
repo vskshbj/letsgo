@@ -622,3 +622,15 @@ pragma solidity ^0.8.20;
 contract FallbackOnly {
     fallback() external {}
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract IfElse {
+    function check(uint256 value) external pure returns (string memory) {
+        if (value > 10) {
+            return "High";
+        } else {
+            return "Low";
+        }
+    }
+}
