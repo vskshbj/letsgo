@@ -856,3 +856,18 @@ contract GasExample {
         value = 0; // can help with gas refunds in some cases
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ReentrancyGuard {
+    bool private locked;
+
+    modifier nonReentrant() {
+        require(!locked, "Reentrant");
+        locked = true;
+        _;
+        locked = false;
+    }
+
+    function protected() external nonReentrant {}
+}
