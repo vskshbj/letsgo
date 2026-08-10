@@ -871,3 +871,22 @@ contract ReentrancyGuard {
 
     function protected() external nonReentrant {}
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract RoleAccess {
+    mapping(address => bool) public admins;
+
+    constructor() {
+        admins[msg.sender] = true;
+    }
+
+    modifier onlyAdmin() {
+        require(admins[msg.sender], "Not admin");
+        _;
+    }
+
+    function addAdmin(address user) external onlyAdmin {
+        admins[user] = true;
+    }
+}
