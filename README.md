@@ -814,3 +814,23 @@ contract ArrayReverse {
         return arr;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract NestedStruct {
+    struct Info {
+        string name;
+        uint256 age;
+    }
+
+    struct User {
+        address addr;
+        Info info;
+    }
+
+    User public user;
+
+    function set(address addr, string calldata name, uint256 age) external {
+        user = User(addr, Info(name, age));
+    }
+}
