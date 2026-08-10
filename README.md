@@ -767,3 +767,13 @@ contract KeccakAssembly {
         }
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ChainidAssembly {
+    function getChainId() external view returns (uint256 id) {
+        assembly {
+            id := chainid()
+        }
+    }
+}
