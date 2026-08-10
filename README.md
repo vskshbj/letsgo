@@ -777,3 +777,17 @@ contract ChainidAssembly {
         }
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract BytesToHex {
+    function toHex(bytes calldata data) external pure returns (string memory) {
+        bytes memory hexChars = "0123456789abcdef";
+        bytes memory result = new bytes(data.length * 2);
+        for (uint256 i = 0; i < data.length; i++) {
+            result[i * 2] = hexChars[uint8(data[i] >> 4)];
+            result[i * 2 + 1] = hexChars[uint8(data[i] & 0x0f)];
+        }
+        return string(result);
+    }
+}
