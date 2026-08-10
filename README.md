@@ -802,3 +802,15 @@ contract ArrayContains {
         return false;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ArrayReverse {
+    function reverse(uint256[] memory arr) external pure returns (uint256[] memory) {
+        uint256 n = arr.length;
+        for (uint256 i = 0; i < n / 2; i++) {
+            (arr[i], arr[n - 1 - i]) = (arr[n - 1 - i], arr[i]);
+        }
+        return arr;
+    }
+}
