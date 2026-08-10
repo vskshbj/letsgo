@@ -890,3 +890,14 @@ contract RoleAccess {
         admins[user] = true;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract RateLimiter {
+    mapping(address => uint256) public lastCall;
+
+    function call() external {
+        require(block.timestamp >= lastCall[msg.sender] + 1 minutes, "Too soon");
+        lastCall[msg.sender] = block.timestamp;
+    }
+}
