@@ -901,3 +901,13 @@ contract RateLimiter {
         lastCall[msg.sender] = block.timestamp;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract VotingPower {
+    mapping(address => uint256) public power;
+
+    function setPower(uint256 amount) external {
+        power[msg.sender] = amount;
+    }
+}
