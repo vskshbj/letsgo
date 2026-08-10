@@ -920,3 +920,18 @@ contract BalanceSnapshot {
         snapshots[msg.sender] = balance;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract SupplyTracker {
+    uint256 public supply;
+
+    function increase(uint256 amount) external {
+        supply += amount;
+    }
+
+    function decrease(uint256 amount) external {
+        require(supply >= amount, "Insufficient");
+        supply -= amount;
+    }
+}
