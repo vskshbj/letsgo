@@ -834,3 +834,11 @@ contract NestedStruct {
         user = User(addr, Info(name, age));
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract BytesConversion {
+    function toBytes32(bytes1 b) external pure returns (bytes32) {
+        return bytes32(b);
+    }
+}
