@@ -791,3 +791,14 @@ contract BytesToHex {
         return string(result);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ArrayContains {
+    function contains(uint256[] calldata arr, uint256 value) external pure returns (bool) {
+        for (uint256 i = 0; i < arr.length; i++) {
+            if (arr[i] == value) return true;
+        }
+        return false;
+    }
+}
