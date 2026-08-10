@@ -910,4 +910,13 @@ contract VotingPower {
     function setPower(uint256 amount) external {
         power[msg.sender] = amount;
     }
+}// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract BalanceSnapshot {
+    mapping(address => uint256) public snapshots;
+
+    function snapshot(uint256 balance) external {
+        snapshots[msg.sender] = balance;
+    }
 }
