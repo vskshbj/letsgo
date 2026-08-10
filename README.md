@@ -842,3 +842,17 @@ contract BytesConversion {
         return bytes32(b);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract GasExample {
+    uint256 public value;
+
+    function set(uint256 _value) external {
+        value = _value;
+    }
+
+    function reset() external {
+        value = 0; // can help with gas refunds in some cases
+    }
+}
