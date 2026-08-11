@@ -945,3 +945,13 @@ contract BatchStyle {
         batchCount += times;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract SignatureStyle {
+    mapping(bytes32 => bool) public usedSignatures;
+
+    function markUsed(bytes32 sigHash) external {
+        usedSignatures[sigHash] = true;
+    }
+}
