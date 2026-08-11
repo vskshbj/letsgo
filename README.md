@@ -965,3 +965,11 @@ contract HashChain {
         currentHash = keccak256(abi.encodePacked(currentHash, newData));
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract OrderedHash {
+    function hash(uint256 a, uint256 b) external pure returns (bytes32) {
+        return a < b ? keccak256(abi.encodePacked(a, b)) : keccak256(abi.encodePacked(b, a));
+    }
+}
