@@ -955,3 +955,13 @@ contract SignatureStyle {
         usedSignatures[sigHash] = true;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract HashChain {
+    bytes32 public currentHash;
+
+    function update(bytes32 newData) external {
+        currentHash = keccak256(abi.encodePacked(currentHash, newData));
+    }
+}
