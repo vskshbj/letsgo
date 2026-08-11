@@ -935,3 +935,13 @@ contract SupplyTracker {
         supply -= amount;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract BatchStyle {
+    uint256 public batchCount;
+
+    function batch(uint256 times) external {
+        batchCount += times;
+    }
+}
