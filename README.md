@@ -989,3 +989,17 @@ contract TimeWeightedHash {
         return keccak256(abi.encodePacked(block.timestamp, data));
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract CommitReveal {
+    mapping(address => bytes32) public commits;
+
+    function commit(bytes32 hash) external {
+        commits[msg.sender] = hash;
+    }
+
+    function reveal(uint256 value, bytes32 salt) external view returns (bool) {
+        return commits[msg.sender] == keccak256(abi.encodePacked(value, salt));
+    }
+}
