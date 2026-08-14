@@ -1003,3 +1003,16 @@ contract CommitReveal {
         return commits[msg.sender] == keccak256(abi.encodePacked(value, salt));
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract SimpleAuction {
+    address public highestBidder;
+    uint256 public highestBid;
+
+    function bid() external payable {
+        require(msg.value > highestBid, "Bid too low");
+        highestBidder = msg.sender;
+        highestBid = msg.value;
+    }
+}
